@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Gygle</title>
+    <style>
+        .b1 {
+            background: green;
+            color: black;
+            padding:5px 20px;
+        }
+        INPUT.text {
+            border: 1px solid red;
+            padding:5px 20px;
+        }
+        INPUT.text:focus {
+            border: 1px solid yellow;
+            padding:5px 20px;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <p><input type="search" name="q"  class="text" placeholder="Поиск по сайту" id="search">
+    <input type="button" class="b1" value="Найти" id="button"></p>
+</form>
+<script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+<script>
+    //Exer 1-5
+    function start(event){
+        var inputText=document.getElementById("search").value;
+        if(inputText=="google")
+            alert("Yandex круче "+arrOfObjects[0].name);
+        else
+            alert(inputText+" "+arrOfObjects[0].name);
+    }
+    var arrOfObjects=[
+        {name:"James",age:23},
+        {name:"Nick",age:32},
+        {name:"Kate",age:18}
+    ];
+    $("#button").click(start);
+    //-----------------------------------------------------------------
+
+    //ExerNo6
+    function superSum(a,b) {
+        alert(a+"+"+b+"="+(a+b));
+    }
+    superSum(10,20);
+    //---------------------------------------------------------------------
+
+    //ExerNo7
+    var arr=[-3,10,0,-14,27,78,93,-27,14,14,24];//данный массив также испльзуется в 9-ом задании
+    var maxCount=arr[0];
+    var minCount=maxCount;
+    for(var i=1;i<arr.length;i++){
+        if(arr[i]>maxCount)
+            maxCount=arr[i];
+        if(arr[i]<minCount)
+            minCount=arr[i];
+    }
+    console.log(maxCount+" "+minCount);
+    //-------------------------------------------------------
+
+    //Exer No8
+    let a = "XXX";
+    let b = "YYY";
+    let temp=a;
+    a=b;
+    b=temp;
+    console.log(a);
+    console.log(b);
+    //--------------------------------------------------------
+
+    //Exer No9
+    function findMax(mass) {
+        var max=mass[0];
+        for(var k=1;k<mass.length;k++){
+            if(mass[k]>max)
+                max=mass[k];
+        }
+        return max;
+    }
+    console.log(findMax(arr));
+    //--------------------------------------
+    
+    //ExerNo10(поменять с первым для работы с задержкой)
+    /*
+    function work() {
+        var inputText=document.getElementById("search").value;
+        if(inputText=="google")
+            alert("Yandex круче "+arrOfObjects[0].name);
+        else
+            alert(inputText+" "+arrOfObjects[0].name);
+    }
+    function setTm(){
+        setTimeout(work,3000);
+    }
+    var arrOfObjects=[
+        {name:"James",age:23},
+        {name:"Nick",age:32},
+        {name:"Kate",age:18}
+    ];
+    $("#button").click(setTm);
+    */
+    //----------------------------------------------------------
+</script>
+</body>
+</html>
